@@ -105,8 +105,10 @@ export const messageReadsRelations = relations(messageReads, ({ one }) => ({
 // Schemas
 export const insertUserSchema = createInsertSchema(users).omit({
   id: true,
+  pin: true, // PIN is generated server-side
   createdAt: true,
   updatedAt: true,
+  isOnline: true, // Default handled server-side
 }).extend({
   password: z.string().min(6, "Password must be at least 6 characters"),
   email: z.string().email("Invalid email address"),
