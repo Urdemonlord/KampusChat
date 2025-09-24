@@ -1,0 +1,72 @@
+[PROJECT CONTEXT]
+Saya ingin membangun aplikasi chat eksklusif untuk mahasiswa dan alumni Universitas Muhammadiyah Semarang (Unimus). Aplikasi ini terinspirasi dari BBM (BlackBerry Messenger) dengan sistem ID unik seperti PIN, chat realtime, broadcast info, dan status yang auto-hilang 24 jam.
+
+[OBJECTIVES]
+- Meningkatkan relasi antar mahasiswa dan alumni.
+- Menjadi saluran resmi penyebaran info kegiatan kampus.
+- Memberikan ruang kreativitas mahasiswa (status/stories).
+- Menguatkan ikatan alumni.
+- MVP sederhana tapi bisa dikembangkan ke skala besar.
+
+[TECH STACK]
+- Frontend: Flutter (untuk Android/iOS).
+- Backend: Node.js (Express/NestJS) atau Supabase Functions.
+- Database: PostgreSQL (via Supabase).
+- File storage: Supabase Storage / Firebase Storage.
+- Realtime chat: WebSocket (Socket.IO) atau Supabase Realtime.
+- Push notification: Firebase Cloud Messaging.
+
+[FEATURES TO IMPLEMENT]
+1. **Authentication**
+   - Login pakai email kampus atau NIM + password.
+   - Generate PIN unik untuk tiap user dengan format `UNIMUS-XXXX`.
+   - Role: mahasiswa, alumni, dosen, admin.
+
+2. **User & Profile**
+   - Tabel `users` berisi id, nim/email, pin, role, created_at.
+   - Halaman profil dengan PIN unik, foto, status singkat.
+
+3. **Chat**
+   - Direct message (user-to-user).
+   - Group chat (kelas/UKM).
+   - Broadcast channel (untuk pengumuman dari admin/UKM).
+
+4. **Messages**
+   - Tabel `messages` berisi id, chat_id, sender_id, content, created_at.
+   - Mendukung teks, gambar, dokumen (disimpan di storage).
+
+5. **Status / Stories**
+   - Tabel `status_updates`: id, user_id, content, expired_at (TTL 24 jam).
+   - Ditampilkan di beranda.
+
+6. **Realtime Messaging**
+   - Gunakan WebSocket/Supabase Realtime untuk sync pesan instan.
+   - Notifikasi push saat ada pesan baru / broadcast.
+
+7. **Admin Tools**
+   - Admin bisa membuat broadcast channel (BEM, dosen, alumni).
+   - Pesan broadcast dikirim ke seluruh anggota channel.
+
+[DELIVERABLES REQUESTED]
+1. Struktur folder proyek yang rapi (frontend, backend, database).
+2. Contoh kode backend:
+   - Endpoint login + generate PIN.
+   - WebSocket untuk kirim/terima pesan.
+   - Query ke database Supabase/Postgres untuk simpan user, chat, message.
+3. Contoh kode frontend (Flutter):
+   - Login Page (NIM/email + password).
+   - Home Page dengan daftar chat, grup, dan status.
+   - Chat Page dengan UI pesan realtime.
+   - Status Page untuk posting + melihat stories teman.
+   - Broadcast Page untuk info kampus.
+4. Skrip SQL untuk membuat tabel `users`, `chats`, `messages`, `status_updates`.
+5. Instruksi setup environment di Replit agar bisa dijalankan:
+   - Konfigurasi Supabase/Firebase.
+   - Cara menjalankan backend.
+   - Cara menjalankan frontend Flutter.
+   - Testing sederhana chat realtime.
+
+[STYLE]
+- Buat kode yang jelas, terstruktur, dan mudah di-scale up.
+- Beri komentar pada bagian penting (auth, WebSocket, database query).
+- Gunakan best practice untuk project kecil-menengah.
