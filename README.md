@@ -303,22 +303,3 @@ Lihat file dokumentasi tambahan:
 MIT License - See LICENSE file for details
 
 ---
-
-## 👥 Tim Pengembang
-
-- **Built with ❤️ for KampusChat Community**
-
----
-
-## 📞 Support
-
-Butuh bantuan? Hubungi:
-- 📧 Email: support@kampuschat.com
-- 💬 Chat: Buka issue di GitHub
-- 📱 WhatsApp: [Link WhatsApp]
-
----
-
-## 🎉 Happy Chatting!
-
-Start connecting dengan kampus community Anda sekarang! 🚀
